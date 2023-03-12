@@ -1,4 +1,12 @@
 
+chrome.runtime.onMessage.addListener(
+    function (request) {
+        if (request.message === "refresh") {
+            hideOppenentsRatingChange();
+        }
+    }
+);
+
 document.addEventListener('keydown', (event) => {
     const path = window.location.pathname;
     if (path.startsWith("/game/live")) {
